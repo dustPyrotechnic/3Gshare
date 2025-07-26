@@ -30,9 +30,9 @@
             filePath = "3GShare/&#x767b;&#x9646;&#x548c;&#x6ce8;&#x518c;/LoginController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-isRegisterSuccess"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-presentRegisterPage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

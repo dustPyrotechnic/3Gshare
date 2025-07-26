@@ -16,6 +16,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol changeWindow <NSObject>
+
+- (void) changeWindow;
+
+@end
+
 @interface LoginController : UIViewController <UITextFieldDelegate, LoginProtocol>
 // 暂时存储数据
 @property (nonatomic, strong) user* userInfo;
@@ -24,8 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) login* LoginPage;
 @property (nonatomic, strong) registerPage* registerPage;
 @property (nonatomic, strong) loadPage* loadPage;
+
+
 // M
 @property (nonatomic, strong) loginAndRegisterModel* Model;
+
+@property (nonatomic, strong) id<changeWindow> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -129,7 +129,7 @@
     registerBtn.layer.shadowOpacity = 0.25;
     
 //    [loginBtn setBackgroundColor:[UIColor colorWithRed:205 / 255.0 green:209 / 255.0 blue:211 / 255.0 alpha:1.0]];
-    [registerBtn setBackgroundColor:[UIColor whiteColor]];
+    [registerBtn setBackgroundColor:[UIColor systemBackgroundColor]];
     
 //    [loginBtn setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
     [registerBtn setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];

@@ -6,8 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginController.h"
+#import "tabbarController.h"
 
-@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+@interface SceneDelegate : UIResponder <UIWindowSceneDelegate, changeWindow>
 
 @property (strong, nonatomic) UIWindow * window;
 

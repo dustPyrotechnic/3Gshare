@@ -6,7 +6,6 @@ target '3GShare' do
   # use_frameworks!
 pod 'LookinServer', :configurations => ['Debug']
 pod 'HMSegmentedControl'
-pod 'FLAnimatedImage'
   # Pods for 3GShare
 
 end

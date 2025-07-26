@@ -7,7 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "LookinServer/LookinServer.h"
-#import "LoginController.h"
+
 
 
 @interface SceneDelegate ()
@@ -23,10 +23,12 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     self.window.frame = [UIScreen mainScreen].bounds;
     LoginController* loginController = [[LoginController alloc] init];
+    loginController.delegate = self;
     self.window.rootViewController = loginController;
     
     [self.window makeKeyAndVisible];
 }
+
 
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
@@ -61,5 +63,12 @@
     // to restore the scene back to its current state.
 }
 
+
+- (void)changeWindow {
+    tabbarController* mainPage = [[tabbarController alloc] init];
+    self.window.rootViewController = mainPage;
+    [self.window makeKeyAndVisible];
+    
+}
 
 @end

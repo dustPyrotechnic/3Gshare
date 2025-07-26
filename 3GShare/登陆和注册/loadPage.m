@@ -17,7 +17,7 @@
         CGFloat width = frame.size.width;
         CGFloat height = frame.size.height;
         
-        NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"load" ofType:@"GIF"];
+        NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"loadPage" ofType:@"GIF"];
         NSURL* gitURL = [NSURL fileURLWithPath:gifPath];
         
         WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
@@ -49,10 +49,23 @@
         [self addSubview:self.maintitle];
         [self addSubview:self.smalltitle];
         
-        // 启动副标题闪烁动画
-        [self startBlinkingAnimation];
+        // 确保在主线程上延迟启动动画
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self startBlinkingAnimation];
+        });
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentHomePage)];
+        [self addGestureRecognizer:tapGesture];
     }
     return self;
+}
+
+- (void) presentHomePage {
+//    NSLog(@"点击了屏幕，停止闪烁动画");
+//    [self stopBlinkingAnimation];
+    [self.delegate presentHomePage];
+    [self stopBlinkingAnimation];
+    [self removeFromSuperview];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

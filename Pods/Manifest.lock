@@ -1,26 +1,22 @@
 PODS:
-  - FLAnimatedImage (1.0.17)
   - HMSegmentedControl (1.5.6)
   - LookinServer (1.2.8):
     - LookinServer/Core (= 1.2.8)
   - LookinServer/Core (1.2.8)
 
 DEPENDENCIES:
-  - FLAnimatedImage
   - HMSegmentedControl
   - LookinServer
 
 SPEC REPOS:
   trunk:
-    - FLAnimatedImage
     - HMSegmentedControl
     - LookinServer
 
 SPEC CHECKSUMS:
-  FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
   HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
   LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
 
-PODFILE CHECKSUM: 3c811b9de80045ea44f25a49580ccd8c93f541bd
+PODFILE CHECKSUM: 372816fc767f5047be28146562dc21ed39bfeceb
 
 COCOAPODS: 1.16.2

@@ -8,6 +8,7 @@
 #import "LoginController.h"
 
 
+
 @interface LoginController ()
 
 @end
@@ -36,10 +37,13 @@
     // 初始化缓存区
     self.userInfo = [[user alloc] init];
     
-    self.loadPage = [[loadPage alloc] initWithFrame:self.view.bounds];
+//    self.loadPage = [[loadPage alloc] initWithFrame:self.view.bounds];
+    
+    // 测试代码
+    [self presentHomePage];
     
 //    [self.view addSubview:self.LoginPage];
-    [self.view addSubview:self.loadPage];
+//    [self.view addSubview:self.loadPage];
 }
 
 #pragma mark -登录部分
@@ -69,9 +73,18 @@
     self.userInfo.password = temp.text;
 }
 
+
+
 - (void) goToLoadPage {
+    self.loadPage = [[loadPage alloc] initWithFrame:self.view.bounds];
+    self.loadPage.delegate = self;
     [self.view addSubview:self.loadPage];
 }
+/// 弹出主页面
+- (void) presentHomePage {
+    [self.delegate changeWindow];
+}
+
 
 #pragma mark -注册部分方法
 /// 呈现注册页面

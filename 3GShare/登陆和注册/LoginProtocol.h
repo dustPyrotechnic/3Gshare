@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL) isRegisterSuccess;
 // 把注册页面的值直接给登录界面
 - (void) fillUserInfo;
+
+/// 弹出主页面
+- (void) presentHomePage;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -97,8 +97,8 @@
     [loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     [registerBtn setTitle:@"注册" forState:UIControlStateNormal];
     
-    [loginBtn setBackgroundColor:[UIColor whiteColor]];
-    [registerBtn setBackgroundColor:[UIColor whiteColor]];
+    [loginBtn setBackgroundColor:[UIColor systemBackgroundColor]];
+    [registerBtn setBackgroundColor:[UIColor systemBackgroundColor]];
     
     loginBtn.layer.cornerRadius = 5;
     registerBtn.layer.cornerRadius = 5;

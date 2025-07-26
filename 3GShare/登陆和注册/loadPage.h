@@ -6,12 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface loadPage : UIView
 @property(nonatomic, strong) UILabel* maintitle;
 @property(nonatomic, strong) UILabel* smalltitle;
+
+@property(nonatomic, strong) id<LoginProtocol> delegate;
 @end
 
 NS_ASSUME_NONNULL_END
