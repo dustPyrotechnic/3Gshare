@@ -6,7 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "homePageVC.h"
+#import "searchPageVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

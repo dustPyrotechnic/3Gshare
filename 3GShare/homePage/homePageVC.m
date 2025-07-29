@@ -30,15 +30,27 @@
     self.navigationController.hidesBarsOnTap = NO;
     self.navigationController.hidesBarsWhenVerticallyCompact = NO;
     self.navigationController.hidesBarsWhenKeyboardAppears = NO;
-    self.navigationItem.title = @"Share";
+//    self.navigationItem.title = @"SHARE";
+    
+    // 设置标题大小
+    UILabel* titleLabel = [[UILabel alloc] init];
+    titleLabel.text = @"SHARE";
+    titleLabel.font = [UIFont systemFontOfSize:24.0];
+    titleLabel.textColor = [UIColor blackColor];
+    [self.navigationItem setTitleView:titleLabel];
+    
     // 设置导航栏背景颜色
     UINavigationBarAppearance* appearance = [UINavigationBarAppearance new];
     appearance.backgroundColor = [UIColor colorWithRed:79 / 255.0 green:141 / 255.0 blue:198 / 255.0 alpha:1.0];
     self.navigationController.navigationBar.standardAppearance = appearance;
     self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
+    
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.mainView.mainTableview reloadData];
 }
 

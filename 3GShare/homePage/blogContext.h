@@ -14,14 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface blogContext : NSObject
 /// 封面图
 @property (nonatomic, strong) UIImage* mainIma;
-/// 发布内容包括封面图
+/// 发布内容不包括封面图
 @property (nonatomic, strong) NSArray* imaArray;
 /// 标题
 @property (nonatomic, strong) NSString* mainTitle;
 
+/// 内容
+@property (nonatomic, strong) NSString* text;
+/// 作者头像
+@property (nonatomic, strong) UIImage* headPhoto;
+/// 作者
 @property (nonatomic, strong) NSString* author;
 /// 标签数组，以字符串分开储存
-@property (nonatomic, strong) NSArray* tagArray;
+@property (nonatomic, strong) NSMutableArray* tagArray;
 /// 发布时间（几分钟前）
 @property (nonatomic, strong) NSString* lanunchTime;
 

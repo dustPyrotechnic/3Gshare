@@ -80,6 +80,11 @@ NS_ASSUME_NONNULL_BEGIN
         blog.shareNum = 40;
         blog.isShare = NO;
     }
+    
+    // 注册观察者
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getBlog:) name:@"newBlog" object:nil];
+    
+    
     return self;
 }
 // 第一个cell
@@ -172,6 +177,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)saveData:(blogContext*)blog atRow:(NSInteger)row {
     self.blogArr[row] = blog;
+}
+
+
+- (void) getBlog: (NSNotification*) send {
+    // 保存传来的blog
+    blogContext* newBlog = send.userInfo[@"blog"];
+    [self.blogArr insertObject:newBlog atIndex:0];
 }
 
 @end

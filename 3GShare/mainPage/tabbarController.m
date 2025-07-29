@@ -24,7 +24,8 @@
     homePageVC* home = [[homePageVC alloc] init];
     UINavigationController* homeNav = [[UINavigationController alloc] initWithRootViewController:home];
     
-    UIViewController* serch = [[UIViewController alloc] init];
+    searchPageVC* serch = [[searchPageVC alloc] init];
+    // 保证上传部分的页面可以首页的页面进行同步，并且在上传之后可以保存
     UINavigationController* serchNav = [[UINavigationController alloc] initWithRootViewController:serch];
     
     UIViewController* note = [[UIViewController alloc] init];
@@ -82,7 +83,8 @@
     
     self.viewControllers = @[homeNav, serchNav, noteNav, trophyNav, personalFileNav];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshBlog) name:@"refreshBlog" object:nil];
+
     self.tabBar.backgroundColor = [UIColor clearColor];
     // 设置为透明图片
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(1, 1), NO, 0.0f);
@@ -110,6 +112,11 @@
     [generator prepare];
     [generator impactOccurred];
     self.tabBar.backgroundColor = [UIColor systemBackgroundColor];
+}
+
+- (void) refreshBlog {
+    // 跳转到主页，并刷新数据
+    self.selectedIndex = 0;
 }
 
 /*

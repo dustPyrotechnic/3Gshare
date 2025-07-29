@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///  0：注册成功
 ///  1：邮箱有重复
 ///  2：用户名有重复
+///
+///- Throws: 返回nil
 - (NSInteger) isValidRegister:(user*) users;
 @end
 

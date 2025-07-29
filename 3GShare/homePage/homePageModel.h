@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)saveData:(blogContext*)blog atRow:(NSInteger)row;
 
+/// 保存由上传页面传来的blog
+- (void) getBlog: (blogContext*) blog;
+
 
 @end
 

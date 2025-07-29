@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface searchPage : UIView
 
+@property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, strong) id<UITableViewDelegate,UITableViewDataSource> delegate;
 @end
 
 NS_ASSUME_NONNULL_END
