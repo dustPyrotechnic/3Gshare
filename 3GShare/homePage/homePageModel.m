@@ -186,6 +186,17 @@ NS_ASSUME_NONNULL_BEGIN
     [self.blogArr insertObject:newBlog atIndex:0];
 }
 
+- (void) sendAllBlog {
+    // 发送所有博客数据，通知传值传递
+    NSLog(@"发送所有博客数据");
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    dict[@"blogArr"] = self.blogArr;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"allBlog" object:nil userInfo:dict];
+    NSLog(@"发送完毕");
+    
+}
+
 @end
 
 NS_ASSUME_NONNULL_END

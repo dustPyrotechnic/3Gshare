@@ -8,6 +8,8 @@
 #import "searchPageVC.h"
 #import "CoreHaptics/CoreHaptics.h"
 
+#import "BaymaxVC.h"
+
 @interface searchPageVC ()
 
 @end
@@ -216,6 +218,10 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     // 收起键盘
     [textField resignFirstResponder];
+    if ([textField.text isEqual:@"大白"])  {
+        BaymaxVC* bayMax = [[BaymaxVC alloc] init];
+        [self.navigationController pushViewController:bayMax animated:YES];
+    }
     // 这里弹出搜索结果
     NSLog(@"搜索内容: %@", textField.text);
     return YES;

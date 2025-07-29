@@ -54,6 +54,12 @@
     [self.mainView.mainTableview reloadData];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    // 使用model把整个集合发出去
+    [self.homeModel sendAllBlog];
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;

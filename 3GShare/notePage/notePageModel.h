@@ -1,21 +1,25 @@
 //
-//  homePageModel.h
+//  notePageModel.h
 //  3GShare
 //
-//  Created by 红尘一笑 on 2025/7/24.
+//  Created by 红尘一笑 on 2025/7/29.
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "UIKit/UIKit.h"
 #import "blogContext.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface homePageModel : NSObject
-// 提供博客数组
-@property (nonatomic, strong) NSMutableArray* blogArr;
-/// 为第一个cell的滑动照片墙提供照片数组
-- (NSArray*) providesImages;
+@protocol modelDelegate <NSObject>
+
+- (void) refreshData;
+
+@end
+
+@interface notePageModel : NSObject
+@property (nonatomic, strong) id<modelDelegate> delegate;
+@property (nonatomic, strong) NSMutableArray* blogArray;
 // 为第二个cell提供主图片
 - (UIImage*)providMainIma:(NSIndexPath*)indexPath;
 // 为第二个cell提供主标题
@@ -40,14 +44,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)provideIsShare:(NSIndexPath*)indexPath;
 
 - (void)saveData:(blogContext*)blog atRow:(NSInteger)row;
-
-/// 保存由上传页面传来的blog
-- (void) getBlog: (blogContext*) blog;
-/// 在消失之后，发送所有的blog
-- (void) sendAllBlog;
-
-
 @end
 
 NS_ASSUME_NONNULL_END
-

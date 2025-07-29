@@ -28,10 +28,10 @@
     // 保证上传部分的页面可以首页的页面进行同步，并且在上传之后可以保存
     UINavigationController* serchNav = [[UINavigationController alloc] initWithRootViewController:serch];
     
-    UIViewController* note = [[UIViewController alloc] init];
+    notePageVC* note = [[notePageVC alloc] init];
     UINavigationController* noteNav = [[UINavigationController alloc] initWithRootViewController:note];
 
-    UIViewController* trophy = [[UIViewController alloc] init];
+    activityPageVC* trophy = [[activityPageVC alloc] init];
     UINavigationController* trophyNav = [[UINavigationController alloc] initWithRootViewController:trophy];
     
     UIViewController* personalFile = [[UIViewController alloc] init];

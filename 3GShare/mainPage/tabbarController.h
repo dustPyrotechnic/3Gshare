@@ -9,6 +9,8 @@
 
 #import "homePageVC.h"
 #import "searchPageVC.h"
+#import "notePageVC.h"
+#import "activityPageVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
