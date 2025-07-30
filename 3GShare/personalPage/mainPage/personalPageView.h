@@ -9,8 +9,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface personalPageView : UIView
+@protocol personalPage <NSObject>
 
+- (void) test;
+
+@end
+@interface personalPageView : UIView
+@property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, strong) id<personalPage> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

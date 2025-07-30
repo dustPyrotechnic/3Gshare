@@ -11,6 +11,7 @@
 #import "searchPageVC.h"
 #import "notePageVC.h"
 #import "activityPageVC.h"
+#import "personalPageVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

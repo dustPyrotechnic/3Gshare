@@ -34,7 +34,7 @@
     activityPageVC* trophy = [[activityPageVC alloc] init];
     UINavigationController* trophyNav = [[UINavigationController alloc] initWithRootViewController:trophy];
     
-    UIViewController* personalFile = [[UIViewController alloc] init];
+    personalPageVC* personalFile = [[personalPageVC alloc] init];
     UINavigationController* personalFileNav = [[UINavigationController alloc] initWithRootViewController:personalFile];
     
     UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:20 weight:UIImageSymbolWeightMedium];

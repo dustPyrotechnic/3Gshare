@@ -15,10 +15,11 @@
     if (self) {
         self.selfBlog = [[blogContext alloc] init];
         NSString* name = [[NSUserDefaults standardUserDefaults] stringForKey:@"userName"];
-        if (name) {
+        if (!name) {
             name = @"游客用户";
         }
         self.selfBlog.author = name;
+        
         self.selfBlog.lanunchTime = @"几分钟前发布";
         self.btnArray = [[NSMutableArray alloc] init];
         self.strArr = @[@"平面设计", @"网页设计", @"UI/icon", @"插画/手绘", @"虚拟设计", @"影视", @"摄影", @"其他"];

@@ -23,6 +23,12 @@
             NSLog(@"当前密码为%@，比较密码为%@", users.password, temp.password);
             if ([users.password isEqual:temp.password]) {
                 NSLog(@"登录完毕，用户名为%@，密码为%@", users.name, users.password);
+                
+                // 把数据发送给个人页面
+                NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+                dict[@"personalInfo"] = users;
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"personalInfo" object:nil userInfo:dict];
+                NSLog(@"已将个人信息与个人页面共享");
                 return YES;
             }
         }
